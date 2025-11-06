@@ -1,5 +1,5 @@
 import pytest
-from library_service import (
+from services.library_service import (
     add_book_to_catalog, search_books_in_catalog
 )
 from database import get_book_id_by_isbn
