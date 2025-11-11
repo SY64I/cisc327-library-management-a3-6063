@@ -228,7 +228,7 @@ def calculate_late_fee_for_book(patron_id: str, book_id: int) -> Dict:
     end_date = datetime.now()
     if book_borrow_record['return_date'] != None:
         end_date = book_borrow_record['return_date']
-
+    
     if end_date <= book_borrow_record['due_date']: 
         return { # no calculation is needed
             'fee_amount': 0.00,

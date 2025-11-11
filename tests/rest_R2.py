@@ -8,6 +8,9 @@ from database import (
 )
 
 '''
+NOTE: This test script is currently disabled since it was designed to directly test database functions and
+I am now assuming that my tests should no longer ever access the database.
+
 This script is designed to test for R2, mainly testing the database.py get_all_books function.
 Make sure to run 'python3 resetdata.py' in the terminal before running 'pytest' so tests run correctly.
 
@@ -46,6 +49,7 @@ def test_book_catalog_valid_list():
 
     assert foundbook1
     assert foundbook2
+    clear_all_data()
 
 def test_book_catalog_valid_empty_list():
     """Test an empty book catalog."""
@@ -85,6 +89,7 @@ def test_book_catalog_valid_copies():
             break
 
     assert valid_copies
+    clear_all_data()
     
 def test_book_catalog_valid_add_remove():
     """Test adding and removing a book from the catalog"""
@@ -116,3 +121,4 @@ def test_book_catalog_valid_add_remove():
             break
 
     assert not book_exists
+    clear_all_data()
